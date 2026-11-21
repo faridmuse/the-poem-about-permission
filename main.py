@@ -16,6 +16,8 @@ POEM = (
 
 
 def main() -> None:
+    if not 1 <= len(POEM.strip()) <= 280:
+        raise ValueError("poem must be 1 to 280 characters, got %d" % len(POEM.strip()))
     os.makedirs("/output", exist_ok=True)
     try:
         os.chmod("/output", 0o755)
